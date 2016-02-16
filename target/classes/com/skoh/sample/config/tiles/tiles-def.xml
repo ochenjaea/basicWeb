@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+       
+<tiles-definitions>
+
+<!--=============================================================================================
+     Static Layout Template
+=================================================================================================-->    
+    <definition name="defaultMainTemplate" template="/WEB-INF/jsp/template/defaultMainTemplate.jsp">
+    	<put-attribute name="header" value="/WEB-INF/jsp/include/header.jsp"/>
+    	<put-attribute name="top" value="/WEB-INF/jsp/include/top.jsp"/>
+    	<put-attribute name="menu" value="/WEB-INF/jsp/include/menu.jsp"/>
+    	<put-attribute name="footer" value="/WEB-INF/jsp/include/footer.jsp"/>
+    </definition>
+  	
+	<definition name="/pageView/main1" extends="defaultMainTemplate">
+		<put-attribute name="body" value="/WEB-INF/jsp/include/body1.jsp"/>
+	</definition>
+    
+    <definition name="defaultSubMainTemplate" template="/WEB-INF/jsp/template/defaultSubMainTemplate.jsp">
+    	 <put-attribute name="leftmenu" value="/WEB-INF/jsp/include/menu/left_menu.jsp"/>
+    	<put-attribute name="header" value="/WEB-INF/jsp/include/header.jsp"/>
+    	<put-attribute name="top" value="/WEB-INF/jsp/include/top.jsp"/>
+    	<put-attribute name="menu" value="/WEB-INF/jsp/include/menu.jsp"/>
+    	<put-attribute name="footer" value="/WEB-INF/jsp/include/footer.jsp"/>
+    	<put-attribute name="depthmenu" value="/WEB-INF/jsp/include/depthmenu.jsp"/>
+    </definition>
+    
+    <definition name="/pageView/main2" extends="defaultSubMainTemplate">
+		<put-attribute name="body" value="/WEB-INF/jsp/include/body.jsp"/>
+	</definition>
+    
+    
+    <definition name="/pageView/samplePage" extends="defaultSubMainTemplate">
+		<put-attribute name="body" value="/WEB-INF/jsp/samplePage/samplePage.jsp"/>
+	</definition>   
+	
+	<definition name="/pageView/sampleListPage" extends="defaultSubMainTemplate">
+		<put-attribute name="body" value="/WEB-INF/jsp/samplePage/sampleListPage.jsp"/>
+	</definition>   
+    
+	
+    <definition name="layout" template="/WEB-INF/jsp/layout/layout.jsp">
+    	<put-attribute name="header" value="/WEB-INF/jsp/include/header.jsp"/>
+    	
+    </definition>
+    	
+	<definition name="/ajax/service" template="/WEB-INF/jsp/blank.jsp" />
+	
+	<definition name="denied" template="/WEB-INF/jsp/denied.jsp" />
+	
+	<definition name="gridEdit" template="/WEB-INF/jsp/blank.jsp" />
+	
+	<definition name="/pageView/login" template="/WEB-INF/jsp/login/login.jsp">
+		<put-attribute name="header" value="/WEB-INF/jsp/include/header.jsp"/>
+	</definition>	
+		<definition name="success" extends="defaultMainTemplate">
+		<put-attribute name="body" value="/WEB-INF/jsp/user_manage/success.jsp"/>
+	</definition>	
+	<definition name="loginInsert" template="/WEB-INF/jsp/login/loginInsert.jsp">
+		<put-attribute name="header" value="/WEB-INF/jsp/include/header.jsp"/>
+	</definition>
+	<definition name="logout" template="/WEB-INF/jsp/login/logout.jsp">
+		<put-attribute name="header" value="/WEB-INF/jsp/include/header.jsp"/>
+	</definition>
+	
+
+	<definition name="error" template="/WEB-INF/jsp/error.jsp" />
+	<definition name="top" template="/WEB-INF/jsp/include/top.jsp" />
+</tiles-definitions>
